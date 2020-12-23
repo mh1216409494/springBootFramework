@@ -1,0 +1,52 @@
+#设置端口
+server:
+  port: 8080
+
+#数据源配置
+spring:
+  #设置为开发环境 Dev开发  Pro生产
+  profiles:
+    active: dev
+  datasource:
+    name: auth
+    url: jdbc:mysql://localhost:3306/auth?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+#Redis
+  redis:
+    #redis服务器地址
+    host: localhost
+    #选择数据库
+    database: 0
+    port: 6379        #端口号
+    password:         #密码
+    timeout: 5000     #连接超时
+    jedis:
+       pool:
+        max-idle: 8   #连接池最大空闲连接
+        min-idle: 0   #连接池最小空闲连接
+        max-active: 8 #连接池最大连接数
+
+  #前台表单提交字符串转换为Date
+  mvc:
+    date-format: yyyy-MM-dd HH:mm:ss
+  #后台的Date类型转换指定格式的字符串在json当中
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+
+mybatis:
+  mvc:
+    date-format: yyyy-MM-dd HH:mm:ss
+  mapper-locations: classpath:/mappers/*.xml
+#配置日志
+logging:
+  config: classpath:logback.xml
+  level:
+    #去除日志启动时一长串的自动匹配信息
+    org:
+      springframework:
+        boot:
+          autoconfigure: error

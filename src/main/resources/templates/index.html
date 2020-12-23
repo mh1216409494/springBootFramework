@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+   <!-- <p>String</p>
+    <p>名字：</p> <span th:text="${str}"></span>-->
+<hr/>
+   <!-- <p>Object</p>
+    <p>代码：</p> <span th:text="${user.userId}"></span>
+    <p>代码：</p> <span th:text="${user.userName}"></span>
+    <p>代码：</p> <span th:text="${user.userPwd}"></span>-->
+<hr/>
+  <!--  <p>map</p>
+    <span th:text = "${map.mes}"></span><hr/>
+    <span th:text = "${map.user.userName}"></span><hr/>
+   <table>
+       <tr th:each = "user:${map.list}">
+           <td th:text = "${user.userName}"></td>
+       </tr>
+   </table>-->
+<hr/>
+    <span th:text = "${user.userId}"></span>
+    <span th:text = "${user.userName}"></span>
+    <span th:text = "${user.userPwd}"></span>
+
+</body>
+</html>
